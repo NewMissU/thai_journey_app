@@ -4,7 +4,6 @@ import "package:integration_test/integration_test.dart";
 import "package:thai_journey_app/main.dart" as app;
 import "package:thai_journey_app/screens/attraction_detail_screen.dart";
 import "package:thai_journey_app/screens/favourite_screen.dart";
-import "package:thai_journey_app/screens/place_search_screen.dart";
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();

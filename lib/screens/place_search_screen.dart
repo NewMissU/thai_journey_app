@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-import 'package:thai_journey_app/model/Provinces.dart';
+// import 'package:http/http.dart' as http;
+// import 'dart:convert';
+// import 'package:thai_journey_app/model/Provinces.dart';
 import 'package:thai_journey_app/screens/attraction_detail_screen.dart';
 import 'package:thai_journey_app/service/place_search_api_service.dart';
 

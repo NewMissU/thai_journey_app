@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+// import 'package:http/http.dart' as http;
+// import 'dart:convert';
 import 'package:thai_journey_app/service/attraction_detail_api_service.dart';
 
 import '../Provider/favourite_provider.dart';

@@ -6,9 +6,9 @@ import 'package:thai_journey_app/model/Provinces.dart';
 
 import 'attraction_detail_screen.dart';
 import 'place_search_screen.dart';
-import '../screens/favourite_screen.dart';
+// import '../screens/favourite_screen.dart';
 
-import '../service/place_search_api_service.dart';
+// import '../service/place_search_api_service.dart';
 import 'package:thai_journey_app/service/home_placesearch_api_service.dart';
 
 // import 'package:project_mobileapp/model/provinces.dart';

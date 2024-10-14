@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 import 'package:thai_journey_app/screens/attraction_detail_screen.dart';
 
 import '../service/favourite_service.dart';
@@ -19,11 +19,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
   FavouriteAttractionDetailApiService attractionDetailService =
       FavouriteAttractionDetailApiService();
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  // }
 
   Future<Map<String, dynamic>?> fetchAttractionDetail(String place_id) async {
     final response = await attractionDetailService
