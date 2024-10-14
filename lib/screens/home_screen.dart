@@ -58,7 +58,7 @@ class _SearchScreenState extends State<HomeScreen1> {
           title: Row(
             children: [
               Image.asset(
-                'assests/logo.png',
+                'assets/logo.png',
                 height: 50,
               ),
               // Image.assets("/logo.png",
@@ -234,7 +234,7 @@ class _SearchScreenState extends State<HomeScreen1> {
                     StackTrace? stackTrace) {
                   return Center(
                     child: Image.asset(
-                      "assests/no1.png",
+                      "assets/no1.png",
                       height: 180,
                       width: double.infinity,
                       fit: BoxFit.cover,

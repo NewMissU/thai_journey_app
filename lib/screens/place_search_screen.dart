@@ -105,7 +105,7 @@ class _PlaceSearchScreenState extends State<PlaceSearchScreen> {
                                       StackTrace? stackTrace) {
                                     return Center(
                                       child: Image.asset(
-                                        'assests/no1.png',
+                                        'assets/no1.png',
                                         fit: BoxFit.cover,
                                       ),
                                     );

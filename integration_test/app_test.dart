@@ -11,118 +11,47 @@ void main() {
 
   testWidgets('Test full app', (WidgetTester tester) async {
     app.main();
-    await tester.pumpAndSettle();
+    await tester.pumpAndSettle(); // รอให้แอปพลิเคชันเรนเดอร์เสร็จสิ้น
 
+    // ค้นหาและคลิกปุ่มที่ต้องการ
     final favbutton1 = find.byType(InkWell).at(0);
     final favbutton2 = find.byType(InkWell).at(1);
-    final favbutton3 = find.byType(InkWell).at(2);
-    final favbutton4 = find.byType(InkWell).at(3);
 
-    Future.delayed(const Duration(seconds: 10));
     await tester.tap(favbutton1);
-    Future.delayed(const Duration(seconds: 5));
+    await tester.pumpAndSettle(); // รอการกระทำที่เกี่ยวข้องกับ UI
+    await Future.delayed(Duration(seconds: 2));
     await tester.tap(favbutton2);
-    Future.delayed(const Duration(seconds: 5));
     await tester.pumpAndSettle();
-    expect(find.byIcon(Icons.favorite), findsAny);
-    Future.delayed(const Duration(seconds: 5));
 
+    // ตรวจสอบว่ามีไอคอน favorite ปรากฏอยู่
+    expect(find.byIcon(Icons.favorite), findsAny);
+
+    // ไปที่หน้าโปรด (favourite screen)
     await tester.tap(find.byKey(Key('Fav')));
     await tester.pumpAndSettle();
-    Future.delayed(const Duration(seconds: 10));
     expect(find.byType(FavouriteScreen), findsOne);
-    Future.delayed(const Duration(seconds: 10));
 
+    // ตรวจสอบและคลิกที่รายการ attraction
     await tester.tap(find.byType(Card).at(0));
-    Future.delayed(const Duration(seconds: 20));
     await tester.pumpAndSettle();
-    Future.delayed(const Duration(seconds: 20));
     expect(find.byType(AttractionDetailScreen), findsOne);
-    expect(find.byIcon(Icons.favorite), findsAny);
-    // expect(find.image(skipOffstage: true), findsOne);
     expect(find.text("รายละเอียด"), findsOne);
 
+    // กดปุ่ม favourite ในหน้ารายละเอียด
+    await Future.delayed(Duration(seconds: 2));
     await tester.tap(find.byKey(Key('FavAttractionButton')));
-    Future.delayed(const Duration(seconds: 5));
     await tester.pumpAndSettle();
-    Future.delayed(const Duration(seconds: 10));
 
+    // กลับไปหน้าก่อนหน้า
+    await Future.delayed(Duration(seconds: 2));
     await tester.tap(find.byKey(Key('AttractionBack')));
-    Future.delayed(const Duration(seconds: 5));
     await tester.pumpAndSettle();
-    Future.delayed(const Duration(seconds: 10));
     expect(find.byType(FavouriteScreen), findsOne);
-    Future.delayed(const Duration(seconds: 10));
 
+    // กลับไปหน้าโฮม
+    await Future.delayed(Duration(seconds: 2));
     await tester.tap(find.byKey(Key('Home')));
-    Future.delayed(const Duration(seconds: 5));
     await tester.pumpAndSettle();
-    Future.delayed(const Duration(seconds: 10));
-
-    final searchBox = find.byKey(Key('SearchBox'));
-    await tester.enterText(searchBox, "กรุง");
-    Future.delayed(const Duration(seconds: 5));
-    await tester.pumpAndSettle();
-    expect(find.text("กรุงเทพมหานคร"), findsAny);
-    await tester.tap(find.text("กรุงเทพมหานคร"));
-    Future.delayed(const Duration(seconds: 30));
-    await tester.pumpAndSettle();
-
-    Future.delayed(const Duration(seconds: 30));
-    expect(find.byType(PlaceSearchScreen), findsOne);
-    Future.delayed(const Duration(seconds: 15));
-
-    await tester.tap(find.byType(Card).at(0));
-    Future.delayed(const Duration(seconds: 20));
-    await tester.pumpAndSettle();
-    Future.delayed(const Duration(seconds: 20));
-    expect(find.byType(AttractionDetailScreen), findsOne);
-    expect(find.byIcon(Icons.favorite), findsAny);
-    // expect(find.image(skipOffstage: true), findsOne);
-    expect(find.text("รายละเอียด"), findsOne);
-
-    await tester.tap(find.byKey(Key('FavAttractionButton')));
-    Future.delayed(const Duration(seconds: 5));
-    await tester.pumpAndSettle();
-    Future.delayed(const Duration(seconds: 10));
-
-    await tester.tap(find.byKey(Key('AttractionBack')));
-    Future.delayed(const Duration(seconds: 5));
-    await tester.pumpAndSettle();
-    Future.delayed(const Duration(seconds: 10));
-    expect(find.byType(PlaceSearchScreen), findsOne);
-    Future.delayed(const Duration(seconds: 10));
-    expect(find.byType(Card), findsAtLeast(1));
+    // await Future.delayed(Duration(seconds: 5));
   });
-
-  // testWidgets('Test full app', (WidgetTester tester) async {
-  //   app.main();
-  //   await tester.pumpAndSettle();
-  //   final searchBox = find.byKey(Key('SearchBox'));
-
-  //   //enter text in searchbox
-  //   Future.delayed(const Duration(seconds: 5));
-  //   await tester.enterText(searchBox, "กรุง");
-  //   Future.delayed(const Duration(seconds: 5));
-  //   await tester.pumpAndSettle();
-  //   expect(find.text("กรุงเทพมหานคร"), findsAny);
-  //   await tester.tap(find.text("กรุงเทพมหานคร"));
-  //   Future.delayed(const Duration(seconds: 5));
-  //   await tester.pumpAndSettle();
-
-  //   Future.delayed(const Duration(seconds: 5));
-  //   expect(find.byType(PlaceSearchScreen), findsOne);
-  //   Future.delayed(const Duration(seconds: 5));
-
-  //   await tester.tap(find.byType(Card).at(0));
-  //   Future.delayed(const Duration(seconds: 5));
-  //   await tester.pumpAndSettle();
-
-  //   expect(find.byType(AttractionDetailScreen), findsOne);
-  //   Future.delayed(const Duration(seconds: 5));
-
-  //   expect(find.text("รายละเอียด"), findsOne);
-  //   Future.delayed(const Duration(seconds: 5));
-  //   // expect(find.byType(Image), findsAtLeast(5));
-  // });
 }

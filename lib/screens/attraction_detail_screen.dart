@@ -92,7 +92,7 @@ class _AttractionDetailScreenState extends State<AttractionDetailScreen> {
                       fit: BoxFit.cover, errorBuilder: (BuildContext context,
                           Object exception, StackTrace? stackTrace) {
                     return Image.asset(
-                      "assests/no2.png",
+                      "assets/no2.png",
                       width: double.infinity,
                       height: MediaQuery.of(context).size.height * 0.5,
                       fit: BoxFit.cover,
