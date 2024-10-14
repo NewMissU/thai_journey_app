@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:thai_journey_app/Provider/favourite_provider.dart';
 import 'package:thai_journey_app/screens/home_screen.dart';
+// import 'screens/testhome_screen.dart';
 // import 'screens/search_screen.dart';
 import 'screens/favourite_screen.dart';
 
@@ -57,11 +58,13 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedIndex: _selectedIndexPage,
         destinations: const <Widget>[
           NavigationDestination(
+            key: Key('Home'),
             selectedIcon: Icon(Icons.home),
             icon: Icon(Icons.home_outlined),
             label: 'Home',
           ),
           NavigationDestination(
+            key: Key('Fav'),
             selectedIcon: Icon(
               Icons.favorite_sharp,
               color: Colors.red,

@@ -111,6 +111,7 @@ class _AttractionDetailScreenState extends State<AttractionDetailScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         InkWell(
+                          key: Key('AttractionBack'),
                           onTap: () {
                             Navigator.pop(context);
                           },
@@ -130,6 +131,7 @@ class _AttractionDetailScreenState extends State<AttractionDetailScreen> {
                           ),
                         ),
                         InkWell(
+                          key: Key('FavAttractionButton'),
                           onTap: () {
                             provider.toggleFavourite(
                                 _attractionDetail!['result']['place_id']);

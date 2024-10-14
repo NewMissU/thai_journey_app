@@ -91,6 +91,7 @@ class _SearchScreenState extends State<HomeScreen1> {
               SizedBox(height: 10),
               // Use Autocomplete widget for search suggestions
               Autocomplete<Provinces>(
+                key: Key('TapProvince'),
                 optionsBuilder: (TextEditingValue textEditingValue) {
                   if (textEditingValue.text.isEmpty) {
                     return const Iterable<Provinces>.empty();
@@ -110,6 +111,7 @@ class _SearchScreenState extends State<HomeScreen1> {
                     FocusNode focusNode,
                     VoidCallback onFieldSubmitted) {
                   return TextField(
+                    key: Key('SearchBox'),
                     controller: textEditingController,
                     focusNode: focusNode,
                     decoration: InputDecoration(
@@ -279,6 +281,7 @@ class _SearchScreenState extends State<HomeScreen1> {
                   //   onPressed: () {},
                   // )
                   InkWell(
+                    key: Key('FavouriteButton'),
                     onTap: () {
                       provider.toggleFavourite(
                           _homeSearch!['result'][randomIndex]['place_id']);
